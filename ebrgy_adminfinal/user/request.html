@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Request</title>
+    <link rel="stylesheet" href="request.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <!-- Left Section -->
+      <div class="navbar-left">
+        <a href="#ebrgy" id="ebrgy-link">e-brgyPH</a>
+      </div>
+
+      <!-- Center Navbar Links -->
+      <div class="navbar-center">
+        <a href="home.html" class="nav-link">Home</a>
+        <a href="request.html" class="nav-link active">Document Request</a>
+        <a href="report.html" class="nav-link">Incident Report</a>
+        <a href="officials.html" class="nav-link">Barangay Officials</a>
+        <a href="insights.html" class="nav-link">Comments/Insights</a>
+      </div>
+
+      <!-- Burger Menu -->
+      <div
+        class="burger-menu"
+        id="burger-menu"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <!-- Burger Dropdown Menu -->
+      <div
+        class="burger-dropdown"
+        id="burger-dropdown"
+        role="menu"
+        aria-hidden="true"
+      >
+        <a href="home.html" class="dropdown-link">Home</a>
+        <a href="request.html" class="dropdown-link active">Document Request</a>
+        <a href="report.html" class="dropdown-link">Incident Report</a>
+        <a href="officials.html" class="dropdown-link">Barangay Officials</a>
+        <a href="insights.html" class="dropdown-link">Comments/Insights</a>
+
+        <!-- Logout Button -->
+        <button id="logout-btn" class="dropdown-logout">Logout</button>
+      </div>
+      <!-- Large Screen Logout Button -->
+      <button id="logout-btn-large" class="logout-large">Logout</button>
+    </div>
+
+    <section id="document-request-form">
+      <h2>Document Request</h2>
+      <form action="request_separate.php" method="POST" enctype="multipart/form-data">
+        <!-- Full Name -->
+        <label for="fullname">Full Name</label>
+        <input
+          type="text"
+          id="fullname"
+          name="fullname"
+          placeholder="ex.Juan Dela Cruz"
+          required
+        />
+
+        <!-- Age -->
+        <label for="age">Age</label>
+        <input 
+          type="number" 
+          id="age" 
+          name="age" 
+          min="1" 
+          max="120" 
+          required 
+          placeholder="Enter your age"
+        />
+
+        <!-- Status -->
+        <label for="status">Status</label>
+        <select id="status" name="status" required>
+          <option value="" disabled selected>Select Status</option>
+          <option value="single">Single</option>
+          <option value="married">Married</option>
+          <option value="widowed">Widowed</option>
+          <option value="separated">Separated</option>
+          <option value="divorced">Divorced</option>
+        </select>
+
+        <!-- Citizen -->
+        <label for="citizen">Citizen</label>
+        <select id="citizen" name="citizen" required>
+          <option value="" disabled selected>Select Citizenship</option>
+          <option value="Filipino">Filipino</option>
+          <option value="Non-Filipino">Non-Filipino</option>
+        </select>
+
+        <!-- Address -->
+        <label for="address">Address</label>
+        <input
+          type="text"
+          id="address"
+          name="address"
+          placeholder="House/Unit Number, Street Name, Barangay, City"
+          title="Enter in the format: House/Unit Number, Street Name, Barangay, City"
+          required
+        />
+
+        <!-- Date -->
+        <label for="date">Requested Date:</label>
+        <input 
+          type="date" 
+          id="requested_date" 
+          name="requested_date" 
+          required 
+        />
+
+        <!-- Email Address -->
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="ex.juandelacruz@gmail.com"
+          required
+        />
+
+        <!-- Document Selection Dropdown -->
+        <label for="document">Document</label>
+        <select id="document" name="document" required onchange="showAdditionalInfo(this)">
+          <option value="" disabled selected>Select Document Type</option>
+          <option value="barangay_certificate">Barangay Certificate</option>
+          <option value="certificate_of_indigency">Certificate of Indigency</option>
+          <option value="certificate_of_comelec_registration">Certificate of COMELEC Registration</option>
+          <option value="certificate_of_non_residency">Certificate of Non-Residency</option>
+          <option value="certificate_of_national_id">Certificate of National ID</option>
+        </select>
+
+        <!-- Barangay Certificate Section (Initially Hidden) -->
+        <div id="barangay-certificate-container" style="display: none;">
+          <p><strong>Purpose of Barangay Certificate:</strong></p>
+          
+          <input type="checkbox" id="id_government" name="barangay_certificate_purpose" value="Identification ID/Government ID" />
+          <label for="id_government">Identification ID/Government ID</label>
+          <br/>
+          <input type="checkbox" id="school_admission" name="barangay_certificate_purpose" value="School Admission/Requirement" />
+          <label for="school_admission">School Admission/Requirement</label>
+          <br/>
+          <input type="checkbox" id="local_employment" name="barangay_certificate_purpose" value="Requirement for Local Employment" />
+          <label for="local_employment">Requirement for Local Employment</label>
+          <br/>
+          <input type="checkbox" id="barangay_clearance" name="barangay_certificate_purpose" value="Barangay Clearance/Proof of Residency" />
+          <label for="barangay_clearance">Barangay Clearance/Proof of Residency</label>
+          <br/>
+
+          <!-- Others Option -->
+          <div>
+            <input type="checkbox" id="barangay_others" name="barangay_certificate_purpose" value="Others" />
+            <label for="barangay_others">Others:</label>
+            <input type="text" id="barangay_others_input" name="barangay_other_details" placeholder="Please specify..." style="display: none;" />
+          </div>
+        </div>
+
+        <!-- Certificate of Indigency Section (Initially Hidden) -->
+        <div id="certificate-of-indigency-container" style="display: none;">
+          <p><strong>Purpose of Certificate of Indigency:</strong></p>
+
+          <input type="checkbox" id="financial_assistance" name="indigency_purpose" value="Financial Assistance" />
+          <label for="financial_assistance">Financial Assistance</label>
+          <br/>
+          <input type="checkbox" id="medical_assistance" name="indigency_purpose" value="Medical Assistance" />
+          <label for="medical_assistance">Medical Assistance</label>
+          <br/>
+          <input type="checkbox" id="educational_assistance" name="indigency_purpose" value="Educational Assistance" />
+          <label for="educational_assistance">Educational Assistance</label>
+          <br/>
+          <input type="checkbox" id="burial_assistance" name="indigency_purpose" value="Burial Assistance" />
+          <label for="burial_assistance">Burial Assistance</label>
+          <br/>
+          <input type="checkbox" id="livelihood_assistance" name="indigency_purpose" value="Livelihood Assistance" />
+          <label for="livelihood_assistance">Livelihood Assistance</label>
+          <br/>
+
+          <!-- Others Option -->
+          <div>
+            <input type="checkbox" id="indigency_others" name="indigency_purpose" value="Others" />
+            <label for="indigency_others">Others:</label>
+            <input type="text" id="indigency_others_input" name="indigency_other_details" placeholder="Please specify..." style="display: none;" />
+          </div>
+        </div>
+
+        <div id="certificate-of-comelec-registration-container" style="display: none;">
+          <p><strong>Purpose of Certificate of National ID:</strong></p>
+          <!-- Remarks for National ID -->
+          <div id="remarks-container">
+            <label for="remarks">Remarks:</label>
+            <input type="text" id="remarks" name="remarks" value="FOR COMELEC REGISTRATION REQUIREMENTS" readonly />
+            <label for="date_of_birth">Date of Birth:</label>
+    <input type="date" id="date_of_birth" name="date_of_birth" required />
+          </div>
+        </div>
+
+        <!-- National ID Certificate Section (with Dynamic Input) -->
+        <div id="certificate_of_national_id-container" style="display: none;">
+          <label>Subject’s Information:</label>
+          
+          <!-- Input for Subject's Full Name -->
+          <label for="subject_name">Subject's Full Name:</label>
+          <input type="text" id="subject_name" name="subject_name" placeholder="Enter full name" />
+          <br/>    
+          <!-- Input for Subject's Birthdate -->
+          <label for="subject_birthdate">Subject's Birthdate:</label>
+          <input type="date" id="subject_birthdate" name="subject_birthdate" />
+          <br/>          
+          <!-- Input for Subject's Age -->
+          <label for="subject_age">Subject's Age:</label>
+          <input type="number" id="subject_age" name="subject_age" placeholder="Enter age" />
+          <p><strong>Purpose of National ID Certification:</strong></p>       
+          
+          <!-- Checkbox options for the purpose -->
+          <input type="checkbox" id="id_government" name="national_id_certificate_purpose" value="Identification ID/Government ID" />
+          <label for="id_government">Identification ID/Government ID</label>
+          <br/>
+          <input type="checkbox" id="school_admission" name="national_id_certificate_purpose" value="School Admission/Requirement" />
+          <label for="school_admission">School Admission/Requirement</label>
+          <br/>
+          <input type="checkbox" id="local_employment" name="national_id_certificate_purpose" value="Requirement for Local Employment" />
+          <label for="local_employment">Requirement for Local Employment</label>
+          <br/>
+          <input type="checkbox" id="barangay_clearance" name="national_id_certificate_purpose" value="Barangay Clearance/Proof of Residency" />
+          <label for="barangay_clearance">Barangay Clearance/Proof of Residency</label>
+          <br/>
+
+          <!-- Others Option -->
+          <div>
+            <input type="checkbox" id="national_id_others" name="national_id_certificate_purpose" value="Others" onclick="toggleOthersInput()" />
+            <label for="national_id_others">Others:</label>
+            <input type="text" id="national_id_others_input" name="national_id_other_details" placeholder="Please specify..." style="display: none;" />
+          </div>
+        </div>
+
+
+        <!-- Select ID Type -->
+        <label for="id-type">Select ID Type</label>
+        <select id="id-type" name="id-type" required>
+          <option value="" disabled selected>Select Valid ID</option>
+          <option value="Barangay_ID">Barangay ID</option>
+          <option value="National_ID">National ID</option>
+          <option value="Passport">Passport</option>
+          <option value="Driver's_License">Driver's License</option>
+          <option value="SSS_ID">SSS ID</option>
+          <option value="PRC_ID">PRC ID</option>
+          <option value="Senior_Citizen_ID">Senior Citizen ID</option>
+          <option value="School_ID">School ID</option>
+          <option value="PhilHealth_ID">PhilHealth ID</option>
+          <option value="PWD_ID">PWD ID</option>
+        </select>
+
+
+        <!-- Attach ID -->
+        <label for="id-photo">Attach ID</label>
+        <div class="container">
+          <button onclick="document.getElementById('id-photo').click()">
+            Upload Photo Here
+          </button>
+          <input
+            type="file"
+            id="id-photo"
+            name="id-photo"
+            accept="image/*"
+            required
+          />
+          <img id="uploaded-photo" src="" alt="Uploaded Photo" />
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submitbut">Submit Request</button>
+      </form>
+    </section>
+    <script>
+      // Show/hide additional sections based on the selected document
+      function showAdditionalInfo(select) {
+        const barangayContainer = document.getElementById('barangay-certificate-container');
+        const indigencyContainer = document.getElementById('certificate-of-indigency-container');
+        const nationalIDContainer = document.getElementById('certificate_of_national_id-container');
+        const comelecContainer = document.getElementById('certificate-of-comelec-registration-container');
+    
+        // Hide all sections initially
+        barangayContainer.style.display = 'none';
+        indigencyContainer.style.display = 'none';
+        comelecContainer.style.display = 'none';
+        nationalIDContainer.style.display = 'none';
+    
+        // Show the relevant section based on selection
+        if (select.value === 'barangay_certificate') {
+          barangayContainer.style.display = 'block';
+        } else if (select.value === 'certificate_of_comelec_registration') {
+          comelecContainer.style.display = 'block';
+        } else if (select.value === 'certificate_of_indigency') {
+          indigencyContainer.style.display = 'block';
+        } else if (select.value === 'certificate_of_national_id') {
+          nationalIDContainer.style.display = 'block';
+        }
+      }
+    
+      // Show/hide the 'Others' input field for Barangay Certificate
+      document.getElementById('barangay_others').addEventListener('change', function() {
+        const othersInput = document.getElementById('barangay_others_input');
+        othersInput.style.display = this.checked ? 'inline-block' : 'none';
+      });
+    
+      // Show/hide the 'Others' input field for Certificate of Indigency
+      document.getElementById('indigency_others').addEventListener('change', function() {
+        const othersInput = document.getElementById('indigency_others_input');
+        othersInput.style.display = this.checked ? 'inline-block' : 'none';
+      });
+
+      // Show/hide the 'Others' input field for National ID Certification
+      function toggleOthersInput() {
+        const othersInput = document.getElementById('national_id_others_input');
+        othersInput.style.display = document.getElementById('national_id_others').checked ? 'inline-block' : 'none';
+      }
+    </script>
+    <script src="app.js"></script>
+  </body>
+</html>

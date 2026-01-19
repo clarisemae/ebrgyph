@@ -1,0 +1,54 @@
+header.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: hsl(210, 29%, 24%); /* Use consistent color */
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: margin-left 0.3s ease;
+  z-index: 1000;
+}
+
+.burger-icon, #admin-name {
+  color: #fff; /* Ensure text color is visible on the background */
+}
+
+header.header.sidebar-open {
+  margin-left: 250px;
+}
+
+/* Right Section */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.profile-photo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  background-color: #ccc;
+}
+
+#admin-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ddd;
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.admin-profile:hover #admin-name {
+  text-decoration: underline;
+}

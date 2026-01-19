@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baranggay Officials</title>
+    <link rel="stylesheet" href="officials.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <!-- Left Section -->
+      <div class="navbar-left">
+        <a href="#ebrgy" id="ebrgy-link">e-brgyPH</a>
+      </div>
+
+      <!-- Center Navbar Links -->
+      <div class="navbar-center">
+        <a href="home.php" class="nav-link">Home</a>
+        <a href="request_general.html" class="nav-link">Document Request</a>
+        <a href="report.html" class="nav-link">Incident Report</a>
+        <a href="officials.html" class="nav-link active">Barangay Officials</a>
+        <a href="insights.html" class="nav-link">Comments/Insights</a>
+      </div>
+
+      <!-- Burger Menu -->
+      <div
+        class="burger-menu"
+        id="burger-menu"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <!-- Burger Dropdown Menu -->
+      <div
+        class="burger-dropdown"
+        id="burger-dropdown"
+        role="menu"
+        aria-hidden="true"
+      >
+        <a href="home.php" class="dropdown-link">Home</a>
+        <a href="request_general.html" class="dropdown-link">Document Request</a>
+        <a href="report.html" class="dropdown-link">Incident Report</a>
+        <a href="officials.html" class="dropdown-link active">Barangay Officials</a>
+        <a href="insights.html" class="dropdown-link">Comments/Insights</a>
+        <a href="profile.php" class="dropdown-link">Profile</a>
+        <!-- Logout Button -->
+        <a href="logout.php" id="logout-btn" class="dropdown-logout">Logout</a>
+      </div>
+
+      <!-- Large Screen Logout Button -->
+      <div class="navbar-right">
+        <!-- Profile Circle -->
+        <a href="profile.php" class="profile-circle">
+          <img src="pic.jpg" alt="User Profile" />
+        </a>
+        <!-- Large Screen Logout Button -->
+        <a href="logout.php" id="logout-btn-large" class="logout-large">Logout</a>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+      <img src="logo.png" alt="Logo" />
+      <div class="sangunian">
+        <h1>Sangguniang Barangay 834 Zone 91</h1>
+        <h2>Barangay Officials</h2>
+      </div>
+    </div>
+
+    <div class="officials-container">
+      <!-- First Row: Single Image Centered -->
+      <div class="official-row">
+        <div class="official-card">
+          <img src="barangay-officials/2.jpg" alt="barangay-chairman" class="official-img" />
+          <p class="official-name">Ronnie G. Inson</p>
+          <p class="official-position">Chairman</p>
+        </div>
+      </div>
+    
+      <!-- Succeeding Rows: Three Images Per Row -->
+      <div class="official-row">
+        <div class="official-card">
+          <img src="barangay-officials/3.jpg" alt="Official Name" class="official-img" />
+          <p class="official-name">Leonard Dranoel F. Lerazan</p>
+          <p class="official-position">Kagawad</p>
+        </div>
+        <div class="official-card">
+          <img src="barangay-officials/4.jpg" alt="Official Name" class="official-img" />
+          <p class="official-name">Ma Asuncion E. Soriano</p>
+          <p class="official-position">Kagawad</p>
+        </div>
+        <div class="official-card">
+          <img src="barangay-officials/5.jpg" alt="Official Name" class="official-img" />
+          <p class="official-name">Editha V. Orate</p>
+          <p class="official-position">Kagawad</p>
+        </div>
+      </div>
+    
+      <div class="official-row">
+        <div class="official-card">
+          <img src="barangay-officials/6.jpg" alt="Official Name" class="official-img" />
+          <p class="official-name">Gemma L. Felipe</p>
+          <p class="official-position">Kagawad</p>
+        </div>
+        <div class="official-card">
+          <img src="barangay-officials/7.jpg" alt="Official Name" class="official-img" />
+          <p class="official-name">Lourdes N. Romero</p>
+          <p class="official-position">Kagawad</p>
+        </div>
+        <div class="official-card">
+          <img src="barangay-officials/8.jpg" alt="Official Name" class="official-img" />
+          <p class="official-name">Marianito L. Batiles Jr.</p>
+          <p class="official-position">Kagawad</p>
+        </div>
+      </div>
+    
+      <div class="official-row">
+        <div class="official-card">
+          <img src="barangay-officials/9.jpg" alt="Official Name" class="official-img" />
+          <p class="official-name">Christian S. Romero</p>
+          <p class="official-position">Kagawad</p>
+        </div>
+        <div class="official-card">
+          <img src="barangay-officials/10.jpg" alt="Official Name" class="official-img" />
+          <p class="official-name">May Ann T. Marcelino</p>
+          <p class="official-position">Secretary</p>
+        </div>
+        <div class="official-card">
+          <img src="barangay-officials/11.jpg" alt="Official Name" class="official-img" />
+          <p class="official-name">Mariann R. Esquivel</p>
+          <p class="official-position">Treasurer</p>
+        </div>
+      </div>
+    
+      <div class="official-row">
+        <div class="official-card">
+          <img src="barangay-officials/12.jpg" alt="Official Name" class="official-img" />
+          <p class="official-name">Yasmaine Abigail P. Maraña</p>
+          <p class="official-position">SK Chairman</p>
+        </div>
+      </div>
+    </div>
+    
+        
+      </body>
+    </html>
+    
+
+    <!-- Optional JavaScript for functionality -->
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,188 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background: rgb(211, 224, 243);
+  background: linear-gradient(
+    180deg,
+    rgba(211, 224, 243, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.form-container {
+  background-color: white;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.form-container h2 {
+  color: #1e3a8a;
+  font-family: "Poppins", serif;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #8a9bbe;
+  font-size: 16px;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px 12px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #1f3b8b;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #3261e3;
+}
+
+.login-link {
+  margin-top: 1rem;
+}
+
+.login-link a {
+  color: #1f3b8b;
+  text-decoration: underline;
+}
+
+.input-field,
+select {
+  background-color: #f9f9f9;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  text-align: left;
+  color: #1e3a8a;
+  font-weight: 500;
+}
+
+input:focus {
+  border: 1.5px solid #1e3a8a;
+  outline: none;
+}
+
+input::placeholder {
+  color: #2c3e50;
+}
+
+.input-item {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.message {
+  color: green;
+  font-size: 14px;
+}
+
+.try-another-way a {
+  color: #1f3b8b;
+  text-decoration: underline;
+}
+
+.try-another-way {
+  margin-top: 1.5rem;
+}
+
+.resend-link {
+  margin-top: 15px;
+  font-size: 14px;
+  display: none;
+}
+
+.resend-link.active {
+  display: block;
+}
+
+/* Mobile Styling for Screens from 0px to 480px */
+@media (max-width: 480px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .form-container {
+    padding: 30px;
+    max-width: 100%;
+    max-height: 100vh;
+    height: 100%; /* Full height for the mobile screen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgb(211, 224, 243);
+    background: linear-gradient(
+      180deg,
+      rgba(211, 224, 243, 1) 0%,
+      rgba(255, 255, 255, 1) 100%
+    );
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .input-field {
+    font-size: 14px; /* Adjust input size */
+    padding: 8px;
+  }
+
+  .btn {
+    font-size: 14px; /* Adjust button size */
+  }
+
+  .login-link a {
+    font-size: 0.8rem;
+  }
+
+  .login-link {
+    font-size: 0.8rem;
+  }
+
+  label {
+    font-size: 14px; /* Smaller font size for labels */
+  }
+  .input-item {
+    margin-top: 1rem;
+  }
+  .message {
+    font-size: 12px; /* Reduce message font size on mobile */
+  }
+  .resend-link {
+    font-size: 12px; /* Adjust resend link font size */
+  }
+  .input-item {
+    margin-bottom: 1rem; /* Reduced margin between fields */
+  }
+}

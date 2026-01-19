@@ -1,0 +1,173 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+/* General page styling */
+body {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  overflow-x: hidden;
+  font-family: "bookman old style";
+  position: relative;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: calc(
+    50% - -250px
+  ); /* Adjust Xpx to offset from center to top border of .officials */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  background: url("../images/logo.png") no-repeat center center;
+  background-size: contain;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+/* Header section styling */
+.header {
+  width: 90%;
+  display: flex;
+  text-align: center;
+  padding: 20px;
+  border-bottom: 2px solid black;
+}
+.header h2 {
+  font-weight: bolder;
+  font-style: italic;
+}
+.header h3 {
+  font-weight: lighter;
+  font-style: italic;
+}
+.header img {
+  width: 100px;
+}
+
+.left-logo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-right: 50px;
+}
+.left-logo img {
+  width: 100px;
+}
+.right-logo img {
+  width: 100px;
+}
+.right-logo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-left: 50px;
+}
+
+.center-content {
+  width: 70%;
+  align-items: center;
+  font-size: 11px;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.content-text h1 {
+  font-style: normal;
+  font-size: 12px;
+}
+.heading {
+  font-size: 20px;
+  text-decoration: underline;
+  padding: 20px 0;
+}
+
+.officials {
+  display: flex;
+  flex-direction: column;
+  font-size: 7px;
+  padding-right: 10px;
+}
+
+.officials strong {
+  text-decoration: underline;
+}
+.officials-text {
+  text-align: left;
+  border-right: 1px solid black;
+}
+.invalid-notice {
+  font-family: "calibri";
+  font-size: 11.5px;
+  font-weight: bold;
+  color: red;
+}
+
+.content-text {
+  width: 70%;
+  font-style: italic;
+}
+
+.content-letter {
+  padding-top: 30px;
+}
+.content-letter1 {
+  padding-top: 20px;
+}
+.content-letter1 strong {
+  font-style: normal;
+}
+.checklist {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-top: 20px;
+}
+.acknowledge {
+  padding-top: 20px;
+}
+.signature {
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+  padding-top: 40px;
+  width: 70%;
+}
+
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body::before {
+    content: "";
+    position: absolute;
+    top: calc(
+      50% - -80px
+    ); /* Adjust Xpx to offset from center to top border of .officials */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
+    background: url("../images/logo.png") no-repeat center center;
+    background-size: contain;
+    opacity: 0.1;
+    z-index: -1;
+  }
+  .div {
+    page-break-inside: avoid;
+  }
+}

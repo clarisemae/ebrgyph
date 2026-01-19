@@ -1,0 +1,133 @@
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgb(211, 224, 243);
+    background: linear-gradient(180deg,
+            rgba(211, 224, 243, 1) 0%,
+            rgba(255, 255, 255, 1) 100%);
+}
+
+.form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    /* Center the form container */
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.form-container h2 {
+    color: #1e3a8a;
+    margin-bottom: 20px;
+}
+
+.input-field,
+select,
+input[type="file"] {
+    width: 100%;
+    /* Full width */
+    padding: 12px;
+    margin: 10px 0;
+    /* Adjusted top and bottom margins */
+    border-radius: 5px;
+    border: 1px solid #8a9bbe;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    /* Ensures padding is included in width calculation */
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #364f97;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    /* Added top margin for spacing */
+}
+
+.btn:hover {
+    background-color: #3261e3;
+}
+
+.register-link {
+    margin-top: 10px;
+}
+
+.register-link a {
+    color: #1f3b8b;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+    display: block;
+}
+
+input::placeholder,
+select,
+.bdate {
+    color: #2c3e50;
+}
+
+input:focus {
+    border: 1.5px solid #1e3a8a;
+    outline: none;
+}
+
+/* Media Query for Mobile Devices (0px to 480px) */
+@media screen and (max-width: 480px) {
+    .form-container {
+        padding: 20px;
+        max-width: 100%;
+        margin-top: 0rem;
+        margin-bottom: 0rem;
+    }
+
+    .input-field,
+    select,
+    input[type="file"] {
+        padding: 10px;
+        font-size: 14px;
+        /* Slightly smaller text and input fields */
+    }
+
+    .btn {
+        padding: 10px;
+        font-size: 14px;
+        /* Adjust button size for mobile screens */
+    }
+
+    .form-container h2 {
+        font-size: 18px;
+        /* Make the heading smaller on mobile */
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-size: 14px;
+        /* Adjust label font size */
+    }
+}

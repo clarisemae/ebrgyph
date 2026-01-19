@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insights</title>
+    <link rel="stylesheet" href="insights.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <!-- Left Section -->
+      <div class="navbar-left">
+        <a href="#ebrgy" id="ebrgy-link">e-brgyPH</a>
+      </div>
+
+        <!-- Center Navbar Links -->
+        <div class="navbar-center">
+          <a href="home.php" class="nav-link active">Home</a>
+          <a href="request_general.html" class="nav-link">Document Request</a>
+          <a href="report.html" class="nav-link">Incident Report</a>
+          <a href="officials.html" class="nav-link">Barangay Officials</a>
+          <a href="insights.html" class="nav-link">Comments/Insights</a>
+        </div>
+
+      <!-- Burger Menu -->
+      <div
+        class="burger-menu"
+        id="burger-menu"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <!-- Burger Dropdown Menu -->
+      <div
+        class="burger-dropdown"
+        id="burger-dropdown"
+        role="menu"
+        aria-hidden="true"
+      >
+        <a href="home.php" class="dropdown-link">Home</a>
+        <a href="request_general.html" class="dropdown-link">Document Request</a>
+        <a href="report.html" class="dropdown-link">Incident Report</a>
+        <a href="officials.html" class="dropdown-link">Barangay Officials</a>
+        <a href="insights.html" class="dropdown-link active">Comments/Insights</a>
+        <a href="profile.php" class="dropdown-link">Profile</a>
+        <!-- Logout Button -->
+        <a href="logout.php" id="logout-btn" class="dropdown-logout">Logout</a>
+      </div>
+
+      <!-- Large Screen Logout Button -->
+      <div class="navbar-right">
+        <!-- Profile Circle -->
+        <a href="profile.php" class="profile-circle">
+          <img src="pic.jpg" alt="User Profile" />
+        </a>
+        <!-- Large Screen Logout Button -->
+        <a href="logout.php" id="logout-btn-large" class="logout-large">Logout</a>
+      </div>
+    </div>
+
+    <div class="form-container">
+      <h2>Resident's Insight</h2>
+      <form action="insights.php" method="POST">
+        <div class="input-item">
+          <!-- Full name -->
+          <label for="name">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            class="input-field"
+            name="name"
+            placeholder="Enter your name"
+            required=""
+          />
+        </div>
+
+        <!-- Email Address -->
+        <label for="email">Email Address</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="ex.juandelacruz@gmail.com"
+            required
+        />
+
+
+        <!-- Date -->
+        <div class="input-item">
+          <label for="date">Date</label>
+          <input
+            type="date"
+            id="date"
+            class="input-field"
+            name="date"
+            required=""
+          />
+        </div>
+        <div class="input-item">
+          <label for="type">Insight About:</label>
+          <select id="type" name="type" class="input-field" required="">
+            <option value="" disabled="" selected="">Select Type</option>
+            <option value="Barangay">Barangay Services</option>
+            <option value="App">The App</option>
+          </select>
+        <div class="input-item">
+          <label for="comment">Your Comment or Suggestion</label>
+          <textarea
+            id="comment"
+            class="input-field"
+            name="comment"
+            placeholder="Write your insights here..."
+            rows="5"
+            required=""
+          ></textarea>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+/* General Styles */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Header */
+.header {
+  background-color: hsl(210, 29%, 24%);
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation and Profile Section */
+.header-left, .header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-left a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* Add more space between the dashboard link and the admin profile */
+}
+
+.header .material-icons-outlined {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+/* Admin Profile Styling */
+.header .admin-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between image and username */
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.header .header-profile-photo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  background-color: #ccc;
+  margin-right: 10px;
+}
+
+/* Admin Username Styling */
+.header .admin-profile .admin-username {
+  color: white;
+  margin-left: 10px; /* Ensure there is space between the profile photo and the username */
+}
+/* Account Settings Container */
+.account-settings-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.account-settings-container h1 {
+  font-size: 24px;
+  color: #34495e;
+  margin-bottom: 20px;
+}
+
+.profile-photo {
+  width: 150px;  /* This can be different or the same as before */
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px; /* Adds space below the photo */
+}
+
+/* Form Styling */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.form-group small {
+  display: block;
+  margin-top: 5px;
+  color: #666;
+}
+
+/* Buttons */
+.btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Success Alert */
+.alert-success {
+  padding: 10px;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header, .account-settings-container {
+      padding: 10px;
+  }
+  .header .admin-profile img {
+      width: 40px;
+      height: 40px;
+  }
+  .btn {
+      padding: 10px;
+  }
+}

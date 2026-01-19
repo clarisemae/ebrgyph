@@ -1,0 +1,357 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+    0deg,
+    rgba(107, 129, 190, 1) 12%,
+    rgba(195, 211, 255, 1) 79%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+ /* Navbar Styling with Sticky Position */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e3a8a;
+  position: sticky; /* Navbar sticks to top */
+  top: 0;
+  z-index: 1000;
+  padding: 10px 2%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+  
+  /* Left Logo Link */
+  .navbar-left a {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-size: 32px;
+    background: linear-gradient(
+      90deg,
+      rgba(214, 69, 73, 1) 35%,
+      rgb(59, 56, 220) 60%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-decoration: none;
+    padding: 5px 10px;
+  }
+  
+  /* Center Navbar Links */
+  .navbar-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navbar-center .nav-link {
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-link.active,
+  .dropdown-link.active {
+    color: #b2c6fe; /* Highlight active link */
+    font-weight: bold;
+  }
+  
+  .navbar-center .nav-link:hover, .nav-link.active{
+    color: #b2c6fe; /* Change color on hover */
+    text-shadow: 0 0 10px rgba(107, 129, 190, 1);
+  }
+  /* Dropdown Menu - Hidden by Default */
+  .burger-dropdown {
+    display: none;
+    flex-direction: column;
+    background-color: #1e3a8a;
+    position: absolute;
+    top: 100%; /* Dropdown appears below navbar */
+    right: 0; /* Align dropdown to the right */
+    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  /* Dropdown Links */
+  .burger-dropdown .dropdown-link {
+    color: #ffffff;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .burger-dropdown .dropdown-link:hover {
+    background-color: #3c6fc7;
+  }
+  
+  /* Logout Button Styling */
+  .dropdown-logout {
+    color: #fff;
+    background-color: #dc3545; /* Red color for logout */
+    margin: 10px 20px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-weight: bold;
+  }
+  
+  .dropdown-logout:hover {
+    background-color: #c82333;
+    box-shadow: 0 0 8px rgba(220, 53, 69, 0.8);
+  }
+  
+  /* Burger Menu for Small Screens */
+  .burger-menu {
+    display: none; /* Hidden on large screens */
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .burger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+  }
+   /* Navbar Right Section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between profile circle and logout button */
+  padding-right: 20px;
+}
+
+/* Profile Circle Styling */
+.profile-circle {
+  display: inline-block;
+  width: 40px; /* Circle size */
+  height: 40px;
+  border-radius: 50%; /* Make it circular */
+  overflow: hidden;
+  border: 2px solid #fff; /* Border around the profile picture */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fits within the circle */
+}
+
+.profile-circle:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+  
+  #logout-btn,
+  .logout-large {
+    font-family: "Poppins", sans-serif; /* Modern font */
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background: linear-gradient(90deg, #ff6b6b, #ff4757); /* Gradient background */
+    padding: 8px 30px;
+    border: none;
+    border-radius: 25px; /* Pill-shaped button */
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  }
+  
+  #logout-btn:hover,
+  .logout-large:hover {
+    background: linear-gradient(90deg, #ff4757, #ff6b6b); /* Reverse gradient */
+    box-shadow: 0 8px 15px rgba(255, 71, 87, 0.4); /* Glow effect */
+    transform: translateY(-2px); /* Lift button */
+  }
+  
+  #logout-btn:active,
+  .logout-large:active {
+    transform: translateY(2px); /* Simulate button press */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Reset shadow */
+  }
+  
+  .logout-large {
+    display: block;
+  }
+  
+.form-container {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.form-container h2 {
+  font-family: poppins;
+  font-weight: bold;
+  color: #1e3a8a;
+  padding: 20px;
+  text-align: center;
+}
+
+/* General Input and Select Styling */
+textarea, input,
+select {
+    width: 100%;
+    padding: 12px 12px; /* Ensure consistent padding */
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Align Select Dropdown with Input Box */
+select {
+    appearance: none; /* Remove default arrow */
+    background: url("data:image/svg+xml;utf8,<svg fill='%231e3a8a' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") 
+        no-repeat right 12px center; /* Custom arrow */
+    background-color: #fff;
+    padding-right: 40px; /* Space for dropdown arrow */
+    height: 48px; /* Match input height */
+}
+
+/* Input and Select Hover Effect */
+textarea:hover, input:hover,
+select:hover {
+    border-color: #1e3a8a;
+    box-shadow: 0 0 8px rgba(30, 58, 138, 0.2);
+}
+
+/* Input and Select Focus Effect */
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #1e3a8a;
+    box-shadow: 0 0 10px rgba(30, 58, 138, 0.5);
+}
+
+label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+}
+
+
+.btn {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.btn:hover {
+  background-color: #0e2052;
+}
+
+@media (max-width: 768px) {
+  body {
+    height: 100vh;
+  }
+  .navbar-right {
+    display: none;
+  }
+
+  #logout-btn,
+  .logout-large {
+    font-size: 14px; /* Smaller text */
+    padding: 6px 20px; /* Adjust padding */
+  }
+  .burger-menu {
+    display: flex; /* Show burger menu */
+  }
+
+  .navbar {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .navbar-center {
+    display: none; /* Hide center links on mobile */
+  }
+
+  /* Burger Dropdown */
+  .burger-dropdown {
+    display: none; /* Initially hidden */
+  }
+
+  .burger-dropdown.active {
+    display: flex; /* Show dropdown when toggled */
+  }
+  .form-container {
+    width: 100%;
+    margin-top: 0;
+    background: linear-gradient(
+      0deg,
+      rgba(107, 129, 190, 1) 12%,
+      rgba(195, 211, 255, 1) 79%
+    );
+    border-radius: 0;
+  }
+
+  textarea, input,
+select {
+  border-color: #1e3a8a;
+  font-family: Arial, sans-serif;;
+  }
+
+  .navbar a {
+    font-size: 16px;
+  }
+
+  #ebrgy-link {
+    font-size: 22px;
+    padding: 14px 0;
+  }
+  #document-request-form {
+    width: 80%;
+    padding: 10px 10px 30px 10px;
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  input,
+  select {
+    font-size: 16px;
+  }
+}

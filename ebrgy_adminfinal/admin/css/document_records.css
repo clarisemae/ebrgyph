@@ -1,0 +1,91 @@
+.main-container {
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+  margin-left: 0;
+}
+
+.main-container.sidebar-open {
+  margin-left: 250px; 
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #f4f6f9;
+  margin: 0;
+}
+
+.document-table-container {
+  background-color: white;
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  max-width: 380px; /* Limits card width for consistency */
+  border-radius: 10px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+  background: #27A844;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  padding: 20px; /* Balanced padding */
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 250px;
+  margin: 8px; 
+  flex-wrap: nowrap
+}
+
+.card.sidebar-open {
+  margin: 20px auto; 
+}
+
+.card .fa-solid fa-certificate {
+  font-size: 80px;
+  color: #007bff;
+  margin-top: 5px; /* Reduced margin */
+}
+
+.card h5 {
+  font-size: 24px;
+  color: white;
+  margin: 15px; /* Reduced margin */
+}
+
+.card p {
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  margin: 8px auto; /* Reduced bottom margin */
+}
+
+.card .line {
+  margin: 2px auto;
+  border-top: 1px solid #ddd;
+  width: 80%; /* Adjust width as needed */
+}
+
+.btn {
+  font-size: 18px;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 100px;
+  transition: color 0.3s ease;
+  align-self: center; /* Center button */
+  margin: 8px auto; /* Reduced bottom margin */ 
+}
+
+.btn:hover {
+ color: #ebb104;
+}

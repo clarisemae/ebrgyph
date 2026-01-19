@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barangay Registration - Step 3</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Barangay Registration</h2>
+        <p>Step 3 of 3: Face Verification</p>
+        <p id="startMessage">Click the button below to start face verification.</p>
+        <button class="btn" onclick="startFaceVerification()">Start Face Verification</button>
+
+        <!-- Video stream to show live camera feed (Hidden initially) -->
+        <video id="video" width="100%" height="auto" autoplay style="display: none;"></video>
+
+        <!-- Canvas for capturing the selfie -->
+        <canvas id="canvas" style="display: none;"></canvas>
+
+        <!-- Displaying the captured image -->
+        <img id="capturedImage" src="" alt="Captured Selfie" style="display:none; width: 100%; margin-top: 20px;" />
+
+        <!-- Status message -->
+        <div id="verificationStatus"></div>
+
+        <!-- Submit button (hidden until face is verified) -->
+        <button id="submitBtn" class="btn" style="display:none;" onclick="submitForm()">Submit Registration</button>
+
+        <!-- Capture button for taking the selfie -->
+        <div id="captureButtonContainer"></div>
+
+        <!-- Already registered link (moved after capture button) -->
+        <div class="register-link">
+            <p>Already registered? <a href="login_page.html">Login here</a></p>
+        </div>
+    </div>
+
+    <script>
+        let video = document.getElementById("video");
+        let canvas = document.getElementById("canvas");
+        let context = canvas.getContext("2d");
+        let submitBtn = document.getElementById("submitBtn");
+        let verificationStatus = document.getElementById("verificationStatus");
+        let capturedImage = document.getElementById("capturedImage");
+        let startMessage = document.getElementById("startMessage");
+
+        function startFaceVerification() {
+            // Start the video stream
+            navigator.mediaDevices
+                .getUserMedia({ video: true })
+                .then((stream) => {
+                    video.srcObject = stream;
+                    video.style.display = "block"; // Show the video once the camera is activated
+                    verificationStatus.innerHTML = "Position your face in front of the camera and click 'Capture' when ready.";
+                    // Hide the start message and button, show the capture button
+                    startMessage.style.display = "none"; // Hide the start message
+                    document.querySelector('.btn').style.display = "none"; // Hide the start button
+                    captureButton.style.display = "block"; // Show capture button
+                })
+                .catch((err) => {
+                    alert("Could not access the camera.");
+                    console.error(err);
+                });
+        }
+
+        // Capture button for taking the selfie
+        const captureButton = document.createElement("button");
+        captureButton.innerHTML = "Capture Selfie";
+        captureButton.classList.add("btn");
+        captureButton.style.display = "none"; // Hide until the video is started
+        document.getElementById('captureButtonContainer').appendChild(captureButton);
+
+        captureButton.addEventListener("click", () => {
+            // Capture the current frame from the video stream
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            // Convert canvas to image
+            let dataUrl = canvas.toDataURL("image/png");
+            capturedImage.src = dataUrl;
+            capturedImage.style.display = "block"; // Show the captured image
+
+            // Hide the video, capture button, and button text after the selfie is taken
+            video.style.display = "none";  // Hide the camera feed
+            captureButton.style.display = "none";  // Hide the capture button
+
+            // Update the verification status
+            verificationStatus.innerHTML = "Selfie captured! Verifying face...";
+
+            // Simulate face detection logic
+            detectFace();
+        });
+
+        function detectFace() {
+            // Placeholder for actual face detection logic.
+            // For now, we'll simulate a successful face detection after the capture.
+            setTimeout(() => {
+                // Simulating face detection (replace with actual face detection code)
+                const faceDetected = true;  // Simulated face detection result
+
+                if (faceDetected) {
+                    verificationStatus.innerHTML = "Face verification successful!";
+                    submitBtn.style.display = "block"; // Show submit button
+                } else {
+                    verificationStatus.innerHTML = "Face not detected. Please try again.";
+                    capturedImage.style.display = "none"; // Hide captured image if face not detected
+                }
+            }, 2000); // Simulate face detection after 2 seconds
+        }
+
+        function submitForm() {
+            alert("Registration completed successfully!");
+            // Here, you would send the form data to the server.
+            window.location.href = "home.html"; // Redirect to a success page
+        }
+    </script>
+</body>
+
+</html>

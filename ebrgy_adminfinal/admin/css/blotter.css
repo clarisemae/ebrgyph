@@ -1,0 +1,164 @@
+/* Main Content */
+.main-container {
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+  margin-left: 0;
+}
+
+.main-container.sidebar-open {
+  margin-left: 250px; 
+}
+
+img {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+table img:hover {
+  transform: scale(1.1);
+  border-color: #3498db;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.modal img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Blotter Records Table */
+.blotter-table-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.blotter-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.blotter-table th,
+.blotter-table td {
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.blotter-table th {
+  background-color: #2c3e50;
+  color: white;
+}
+
+.blotter-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.blotter-table tr:hover {
+  background-color: #e8f8ff; /* Highlight row on hover */
+}
+
+.blotter-table td button {
+  padding: 5px 10px;
+  font-size: 12px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.blotter-table td button:hover {
+  background-color: #2980b9;
+}
+
+.addbtn {
+  float: right;
+}
+
+/* Sort and Search Container */
+.sort-options-container {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Push items to the sides */
+  gap: 15px; /* Adjust the gap between Sort and Search */
+  margin-bottom: 15px;
+  width: 100%; /* Ensures it spans the full container */
+}
+
+/* Sorting Dropdown Section */
+.sort-options-container > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between label and dropdown */
+}
+
+/* Search Section with Icon */
+.search-icon-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 250px; /* Define the width of the search container */
+}
+
+/* Search Input */
+.search-input {
+  width: 100%; /* Occupy full width */
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-right: 35px; /* Space for the icon */
+}
+
+/* Search Icon */
+.search-icon {
+  position: absolute;
+  right: 10px; /* Place the icon inside the input */
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+}
+
+/* Hover Effect for Search Icon */
+.search-icon:hover {
+  color: #000;
+}
+
+  .incident-photo {
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.incident-photo:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+
+/* Adjust for Smaller Screens */
+@media (max-width: 768px) {
+  .sort-options-container {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: flex-start; /* Align to the left */
+      gap: 15px; /* Space between sections */
+  }
+
+  .search-icon-container {
+      width: 100%; /* Make the search input full-width */
+  }
+}

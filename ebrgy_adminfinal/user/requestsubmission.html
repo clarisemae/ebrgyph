@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Successfully Submitted</title>
+    <link rel="stylesheet" href="submission.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  </head>
+  <body>
+    <div class="navbar">
+      <!-- Left Section -->
+      <div class="navbar-left">
+        <a href="#ebrgy" id="ebrgy-link">e-brgyPH</a>
+      </div>
+
+      <!-- Center Navbar Links -->
+      <div class="navbar-center">
+        <a href="home.html" class="nav-link">Home</a>
+        <a href="request_general.html" class="nav-link">Document Request</a>
+        <a href="report.html" class="nav-link">Incident Report</a>
+        <a href="officials.html" class="nav-link">Barangay Officials</a>
+        <a href="insights.html" class="nav-link">Comments/Insights</a>
+      </div>
+
+      <!-- Burger Menu -->
+      <div
+        class="burger-menu"
+        id="burger-menu"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <!-- Burger Dropdown Menu -->
+      <div
+        class="burger-dropdown"
+        id="burger-dropdown"
+        role="menu"
+        aria-hidden="true"
+      >
+        <a href="home.php" class="dropdown-link">Home</a>
+        <a href="request_general.html" class="dropdown-link">Document Request</a>
+        <a href="report.html" class="dropdown-link">Incident Report</a>
+        <a href="officials.html" class="dropdown-link">Barangay Officials</a>
+        <a href="insights.html" class="dropdown-link">Comments/Insights</a>
+        <a href="profile.html" class="dropdown-link">Profile</a>
+        <!-- Logout Button -->
+        <button id="logout-btn" class="dropdown-logout">Logout</button>
+      </div>
+      
+      <!-- Large Screen Logout Button -->
+      <div class="navbar-right">
+        <!-- Profile Circle -->
+        <a href="profile.php" class="profile-circle">
+          <img src="pic.jpg" alt="User Profile" />
+        </a>
+        <!-- Large Screen Logout Button -->
+        <button id="logout-btn-large" class="logout-large">Logout</button>
+      </div>
+    </div>
+
+    <div class="form-container">
+      <h2>Successful <i class="bx bxs-check-circle"></i></h2>
+      <p>
+        Your Requested Document has been submitted successfully. Please allow 24
+        to 48 hours for processing.
+      </p>
+      <a href="home.php"> <button class="btn">Back to Homepage</button></a>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

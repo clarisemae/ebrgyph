@@ -1,0 +1,141 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.account-settings-container {
+    background-color: #fff;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    max-width: 800px;
+    border-radius: 8px;
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+    text-align: left;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #dee2e6; /* light grey line similar to table headers */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"] {
+    width: 100%;
+    padding: 8px 12px;
+    margin-top: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button.btn {
+    padding: 10px 15px;
+    background-color: #007bff; /* Bootstrap primary blue */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button.btn:hover {
+    background-color: #0056b3;
+}
+
+button.btn-back {
+    background-color: #6c757d; /* Bootstrap secondary grey */
+    margin-top: 10px;
+}
+
+button.btn-back:hover {
+    background-color: #5a6268;
+}
+
+.alert-success {
+    color: #155724; /* Bootstrap success green text */
+    background-color: #d4edda; /* Bootstrap success green background */
+    border-color: #c3e6cb;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.profile-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .account-settings-container {
+        width: 90%;
+        padding: 15px;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+}
+
+.header-left a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.header-left a .material-icons-outlined {
+    margin-right: 5px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.admin-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.admin-profile span {
+    font-weight: 600;
+    color: #333;
+}

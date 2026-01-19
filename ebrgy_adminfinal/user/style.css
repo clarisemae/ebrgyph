@@ -1,0 +1,145 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(0deg, rgba(107, 129, 190, 1) 12%, rgba(195, 211, 255, 1) 79%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Form Container Styling */
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 40px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.profile-photo-preview {
+    width: 120px;
+    /* Ensure equal width and height */
+    height: 120px;
+    border-radius: 50%;
+    /* Makes the photo circular */
+    object-fit: cover;
+    /* Ensures the image fits within the circular area */
+    border: 2px solid #1e3a8a;
+    /* Optional border for styling */
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Optional shadow */
+}
+
+.profile-photo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* Ensure content stays within the container */
+}
+
+.profile-photo-container label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+input[type="file"] {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Input and Label Styling */
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:hover,
+select:hover {
+    border-color: #1e3a8a;
+    box-shadow: 0 0 8px rgba(30, 58, 138, 0.2);
+}
+
+input:focus,
+select:focus {
+    border-color: #1e3a8a;
+    outline: none;
+    box-shadow: 0 0 10px rgba(30, 58, 138, 0.5);
+}
+
+/* Submit Button Styling */
+.btn {
+    background-color: #1e3a8a;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0e2052;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .form-container {
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    .profile-photo-preview {
+        width: 100px;
+        height: 100px;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 10px;
+    }
+}

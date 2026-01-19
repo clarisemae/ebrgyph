@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Incident Report</title>
+    <link rel="stylesheet" href="report.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <!-- Left Section -->
+      <div class="navbar-left">
+        <a href="#ebrgy" id="ebrgy-link">e-brgyPH</a>
+      </div>
+
+        <!-- Center Navbar Links -->
+        <div class="navbar-center">
+          <a href="home.php" class="nav-link active">Home</a>
+          <a href="request_general.html" class="nav-link">Document Request</a>
+          <a href="report.html" class="nav-link">Incident Report</a>
+          <a href="officials.html" class="nav-link">Barangay Officials</a>
+          <a href="insights.html" class="nav-link">Comments/Insights</a>
+        </div>
+
+      <!-- Burger Menu -->
+      <div
+        class="burger-menu"
+        id="burger-menu"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <!-- Burger Dropdown Menu -->
+      <div
+        class="burger-dropdown"
+        id="burger-dropdown"
+        role="menu"
+        aria-hidden="true"
+      >
+        <a href="home.php" class="dropdown-link">Home</a>
+        <a href="request_general.php" class="dropdown-link">Document Request</a>
+        <a href="report.html" class="dropdown-link active">Incident Report</a>
+        <a href="officials.php" class="dropdown-link">Barangay Officials</a>
+        <a href="insights.html" class="dropdown-link">Comments/Insights</a>
+        <a href="profile.php" class="dropdown-link">Profile</a>
+        <!-- Logout Button -->
+        <a href="logout.php" id="logout-btn" class="dropdown-logout">Logout</a>
+      </div>
+
+      <!-- Large Screen Logout Button -->
+      <div class="navbar-right">
+        <!-- Profile Circle -->
+        <a href="profile.php" class="profile-circle">
+          <img src="pic.jpg" alt="User Profile" />
+        </a>
+        <!-- Large Screen Logout Button -->
+        <a href="logout.php" id="logout-btn-large" class="logout-large">Logout</a>
+      </div>
+    </div>
+    <div class="form-container">
+      <h2>Incident Report</h2>
+      <form action="report.php" method="POST">
+        <div class="input-item">
+          <label for="complainant">Complainant:</label>
+          <input
+            type="text"
+            id="complainant"
+            name="complainant"
+            class="input-field"
+            required=""
+            placeholder="Enter complainant name"
+          />
+        </div>
+        <div class="input-item">
+          <label for="accused">Accused/Subject:</label>
+          <input
+            type="text"
+            id="accused"
+            name="accused"
+            class="input-field"
+            required=""
+            placeholder="Enter accused or subject name"
+          />
+        </div>
+        
+<!-- Dropdown for Incident Nature Type -->
+<div class="input-item">
+  <label for="incident-type">Incident Nature Type:</label>
+  <select
+    id="incident-type"
+    name="incident_type"
+    class="input-field"
+    required=""
+    onchange="showOtherIncidentInput(this)"
+  >
+    <option value="" disabled="" selected="">
+      Select incident type
+    </option>
+    <option value="Theft">Theft</option>
+    <option value="Vandalism">Vandalism</option>
+    <option value="Harassment">Harassment</option>
+    <option value="Assault">Assault</option>
+    <option value="Other">Other</option>
+  </select>
+</div>
+
+<!-- Additional Info Input for Other Incident -->
+<div id="other-incident-container" class="input-item" style="display: none;">
+  <label for="other-incident">Please specify the other incident:</label>
+  <input
+    type="text"
+    id="other-incident"
+    name="other_incident"
+    class="input-field"
+    placeholder="Enter other incident details"
+  />
+</div>
+
+        <div class="input-item">
+          <label for="incident-address">Incident Address:</label>
+          <input
+            type="text"
+            id="incident-address"
+            name="incident_address"
+            class="input-field"
+            required=""
+            placeholder="Enter incident address"
+          />
+        </div>
+        <div class="input-item">
+          <label for="date">Date of Incident:</label>
+          <input
+            type="date"
+            id="date"
+            name="date"
+            class="input-field"
+            required=""
+          />
+        </div>
+        <div class="input-item">
+          <label for="time">Time of Incident:</label>
+          <input
+            type="time"
+            id="time"
+            name="time"
+            class="input-field"
+            required=""
+          />
+        </div>
+        <div class="input-item">
+          <label for="message">Description of Incident:</label>
+          <textarea
+            id="message"
+            name="message"
+            class="input-field"
+            rows="4"
+            required=""
+            placeholder="Describe the incident..."
+          ></textarea>
+        </div>
+
+        <!-- Attach Photo Section -->
+        <div class="input-item">
+          <label for="incident-photo">Attach Photo (if any):</label>
+          <input
+            type="file"
+            id="incident-photo"
+            name="incident_photo"
+            accept="image/*"
+            class="input-field"
+          />
+        </div>
+        <button type="submit" class="btn">Submit Report</button>
+      </form>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+/* Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hidden */
+    width: 250px;
+    height: 100%;
+    background-color: #2c3e50;
+    color: white;
+    overflow-y: auto;
+    transition: left 0.3s ease; /* Smooth sliding transition */
+    z-index: 1000;
+}
+
+.sidebar.open {
+    left: 0; /* Sidebar slides in */
+}
+
+.sidebar-header {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid #34495e;
+}
+
+.sidebar-header .logo {
+    width: 80px;
+    height: auto;
+}
+
+.sidebar-header h3 {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    margin: 10px 0;
+}
+
+.sidebar-menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 5px;
+}
+
+.sidebar-menu li a:hover,
+.sidebar-menu li a.active {
+    background-color: #34495e;
+}
+
+.logout-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
+}

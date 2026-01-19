@@ -1,0 +1,131 @@
+/* Main Content */
+.main-container {
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+  justify-content: center;
+}
+
+.main-container.sidebar-open {
+  margin-left: 250px; 
+}
+
+.dashboard-container {
+  background-color: rgb(249, 249, 249);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: margin-left 0.3s ease;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.dashboard-container.sidebar-open {
+  margin-left: 250px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Metric Cards */
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
+  padding: 30px;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h5 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+/* Dashboard Metrics Section */
+.row.g-4 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.col-md-6 {
+  flex: 1 1 calc(48% - 20px); /* Two cards per row */
+  max-width: calc(48% - 20px);
+}
+
+/* Charts Section */
+.mt-4 {
+  margin-top: 40px;
+}
+
+.chart-container {
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 100%; /* Ensure full width for charts */
+  box-sizing: border-box;
+}
+
+.chart-container h5 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+#document-request-chart{
+  max-width: 100%;
+  max-height: 100%; /* Adjusted for better proportions */
+}
+
+#incident-type-chart {
+  max-width: 100%;
+  max-height: 84%;  /* Adjusted for better proportions */
+}
+
+/* General Layout */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #f7f9fc;
+  margin: 0;
+}
+
+.card-link {
+  text-decoration: none; /* Removes underline from links */
+  color: inherit; /* Inherits text color from parent */
+}
+
+.card-link .material-icons-outlined {
+  font-size: 36px; /* Larger icons */
+  color: #007bff; /* Example color */
+  margin-bottom: 8px; /* Space between icon and text */
+}
+
+.card {
+  transition: transform 0.3s ease; /* Smooth transform effect on hover */
+}
+
+.card-link:hover .card {
+  transform: translateY(-5px); /* Lifts card slightly on hover */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds shadow for depth */
+}

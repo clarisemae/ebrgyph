@@ -1,0 +1,5 @@
+[09-Jan-2025 18:52:05 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'status' in 'field list' in C:\xampp\htdocs\ebrgy_adminfinal\crudCOMELEC\update_cert.php:79
+Stack trace:
+#0 C:\xampp\htdocs\ebrgy_adminfinal\crudCOMELEC\update_cert.php(79): mysqli->prepare('UPDATE certific...')
+#1 {main}
+  thrown in C:\xampp\htdocs\ebrgy_adminfinal\crudCOMELEC\update_cert.php on line 79
